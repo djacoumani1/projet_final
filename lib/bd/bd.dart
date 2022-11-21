@@ -37,9 +37,11 @@ class DB{
     await db.execute('''
     CREATE TABLE twitte(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    utilisateurId INTEGER NOT NULL,  
     pseudo TEXT NOT NULL, 
     twitt TEXT NOT NULL,
-    date DATETIME DEFAULT CURRENT_TIMESTAMP
+    date DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (utilisateurId) REFERENCES utilisateur (id) ON DELETE NO ACTION ON UPDATE NO ACTION
     )        
     ''');
   }
@@ -93,14 +95,21 @@ class DB{
   Future<List<Twitts>> allTwitt() async {
 
     final db = await instance.database;
-    var twits = await db.rawQuery("SELECT * FROM utilisateur INNER JOIN twitte ON twitte.pseudo = utilisateur.identifiant;");
+    var twits = await db.rawQuery("SELECT * FROM twitte order by date");
     List<Twitts> twitsList = twits.isNotEmpty
         ? twits.map((c) => Twitts.fromMap(c)).toList()
         : [];
     return twitsList;
   }
 
-
+  Future<List<Twitts>> twitteById(int id) async {
+    Database db = await instance.database;
+    var twits = await db.rawQuery("SELECT * FROM twitte WHERE id = '$id'");
+    List<Twitts> twitsList = twits.isNotEmpty
+        ? twits.map((c) => Twitts.fromMap(c)).toList()
+        : [];
+    return twitsList;
+    }
 
   Future<void> delete(int id) async {
 

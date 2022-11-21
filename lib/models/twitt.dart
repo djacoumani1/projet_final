@@ -3,12 +3,14 @@ class Twitts {
   final String pseudo;
   final String twitt;
   final String? date;
+  final int utilisateurId;
 
   Twitts({
     this.id,
     required this.pseudo,
     required this.twitt,
-    required this.date,
+    this.date,
+    required this.utilisateurId,
   });
 
   factory Twitts.fromMap(Map<String, dynamic> json)=> new Twitts(
@@ -16,6 +18,7 @@ class Twitts {
     pseudo: json['pseudo'],
     twitt: json['twitt'],
     date: json['date'],
+    utilisateurId: json['utilisateurId']
   );
 
 
@@ -25,6 +28,7 @@ class Twitts {
       'pseudo': pseudo,
       'twitt': twitt,
       'date': date,
+      'utilisateurId':utilisateurId,
     };
   }
 

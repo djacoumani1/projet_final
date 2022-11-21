@@ -3,6 +3,7 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:projet_final/widgets/logo_nom.dart';
 import '../bd/bd.dart';
 import '../widgets/alertError.dart';
+import 'nouveau_twitt_page.dart';
 import 'profilpage.dart';
 
 class PageAccueil extends StatefulWidget {
@@ -53,8 +54,19 @@ class PageAccueilState  extends State<PageAccueil>{
             ),
           ],
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NouveauTwittPage())
+            );
+          },
+          backgroundColor: Colors.blue,
+          child: const Icon(Icons.add_rounded),
+        ),
         body: Column(
           children: [
+
           ],
         ),
       ),
