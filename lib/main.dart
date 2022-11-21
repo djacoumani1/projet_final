@@ -1,67 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:projet_final/widgets/connexion_button.dart';
+import 'package:projet_final/widgets/logo_nom.dart';
+import 'package:projet_final/widgets/proprietaire.dart';
+import 'dart:ui';
+import 'dart:core';
+import 'widgets/inscription_button.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
+class MyApp extends StatefulWidget {
   @override
+  MyHomePage createState() => MyHomePage();
+}
+
+class MyHomePage extends State<MyApp> with TickerProviderStateMixin {
+  @override
+
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+      home: Scaffold(
+        backgroundColor: Color(0xff0b1d31),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(25, 100, 10, 0),
+              child: Logo_nom(),
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40, 150, 0, 0),
+              child: ConnexionButton(),
             ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40, 20, 0, 0),
+              child: InscriptionButton(),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(40, 300, 0, 0),
+              child: SouleymaneSoumare(),
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+
     );
   }
 }
+
+
