@@ -102,9 +102,9 @@ class DB{
     return twitsList;
   }
 
-  Future<List<Twitts>> twitteById(int id) async {
+  Future<List<Twitts>> twitteById(int utilisateurId) async {
     Database db = await instance.database;
-    var twits = await db.rawQuery("SELECT * FROM twitte WHERE id = '$id'");
+    var twits = await db.rawQuery("SELECT * FROM twitte WHERE utilisateurId = '$utilisateurId'");
     List<Twitts> twitsList = twits.isNotEmpty
         ? twits.map((c) => Twitts.fromMap(c)).toList()
         : [];

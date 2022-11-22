@@ -8,6 +8,8 @@ import '../widgets/alertError.dart';
 import '../widgets/proprietaire.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import 'list_twitt_perso.dart';
+
 class ProfilPage extends StatefulWidget {
   @override
   ProfilPageState createState() => ProfilPageState();
@@ -51,20 +53,36 @@ class ProfilPageState  extends State<ProfilPage>{
         backgroundColor: Color(0xff0b1d31),
         body: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 70, 350, 0),
-              child: InkWell(
-                onTap: (){
-                  Navigator.pop(context);
-                },
-                child: Image
-                  (
-                  width: 40,
-                  height: 40,
-                  image: Svg('assets/retour.svg'),
-                  color: Colors.white,
+            Stack(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 70, 350, 0),
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Image
+                      (
+                      width: 40,
+                      height: 40,
+                      image: Svg('assets/retour.svg'),
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(350, 65, 0, 0),
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => TwittPersoPage())
+                      );
+                    },
+                    child: Image.asset("assets/user-contact-list.png", )
+                  ),
+                ),
+              ],
             ),
 
             Padding(
