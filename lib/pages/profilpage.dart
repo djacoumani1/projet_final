@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:projet_final/models/utilisateur.dart';
+import 'package:projet_final/pages/profil_twitt.dart';
 import 'package:projet_final/widgets/logo_nom.dart';
 import '../bd/bd.dart';
 import '../widgets/alert.dart';
@@ -8,7 +9,7 @@ import '../widgets/alertError.dart';
 import '../widgets/proprietaire.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'list_twitt_perso.dart';
+import '../widgets/list_twitt_perso.dart';
 
 class ProfilPage extends StatefulWidget {
   @override
@@ -76,10 +77,10 @@ class ProfilPageState  extends State<ProfilPage>{
                     onTap: (){
                       Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => TwittPersoPage())
+                          MaterialPageRoute(builder: (context) => ProfilTwittPage())
                       );
                     },
-                    child: Image.asset("assets/user-contact-list.png", )
+                    child: Image.asset("assets/user-contact-list.png", color: Colors.white,)
                   ),
                 ),
               ],

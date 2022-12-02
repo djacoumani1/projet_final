@@ -105,7 +105,7 @@ class NouveauTwittPageState  extends State<NouveauTwittPage>{
                 onPressed: () async{
                   //premiere validation case vide
                   if(!twitt.text.isEmpty){
-                    await DB.instance.insertTwitt(Twitts(pseudo: pseudo, twitt: twitt.text, utilisateurId: idShared));
+                    await DB.instance.insertTwitt(Twitts(pseudo: pseudo, twitt: twitt.text, utilisateurId: idShared, like: 0, unlike: 0));
                     showAlert(context, "Nouveau twitt en ligne");
                   }
                   setState(() {

@@ -40,6 +40,8 @@ class DB{
     utilisateurId INTEGER NOT NULL,  
     pseudo TEXT NOT NULL, 
     twitt TEXT NOT NULL,
+    like INTEGER,
+    unlike INTEGER,
     date DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (utilisateurId) REFERENCES utilisateur (id) ON DELETE NO ACTION ON UPDATE NO ACTION
     )        
@@ -89,6 +91,17 @@ class DB{
       utilisateur.toMap(),
       where: 'id = ?',
       whereArgs: [utilisateur.id],
+    );
+  }
+
+  Future<void> updateLike(Twitts tweet) async {
+
+    final db = await instance.database;
+    await db.update(
+      'twitte',
+      tweet.toMap(),
+      where: 'id = ?',
+      whereArgs: [tweet.id],
     );
   }
 
