@@ -2,8 +2,8 @@ class Twitts {
   final int? id;
   final String pseudo;
   final String twitt;
-   int like;
-   int unlike;
+  int like;
+  int unlike;
   final String? date;
   final int utilisateurId;
 

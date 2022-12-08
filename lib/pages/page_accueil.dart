@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-import 'package:projet_final/widgets/logo_nom.dart';
 import '../bd/bd.dart';
 import '../models/twitt.dart';
-import '../widgets/alertError.dart';
 import 'nouveau_twitt_page.dart';
 import 'profilpage.dart';
 
@@ -91,7 +89,7 @@ class PageAccueilState  extends State<PageAccueil> with SingleTickerProviderStat
                       return Center( child: CircularProgressIndicator());
                     }
                     return snapshot.data!.isEmpty
-                        ? Center(child: Text("Aucun tweet avec ce compte pour l'instant ", style: TextStyle(
+                        ? Center(child: Text("Aucun tweet pour l'instant ", style: TextStyle(
                       fontSize: 16,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,

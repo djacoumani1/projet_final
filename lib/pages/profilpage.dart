@@ -4,8 +4,8 @@ import 'package:projet_final/models/utilisateur.dart';
 import 'package:projet_final/pages/profil_twitt.dart';
 import 'package:projet_final/widgets/logo_nom.dart';
 import '../bd/bd.dart';
-import '../widgets/alert.dart';
 import '../widgets/alertError.dart';
+import '../widgets/deconnexion.dart';
 import '../widgets/proprietaire.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -223,11 +223,12 @@ class ProfilPageState  extends State<ProfilPage>{
                 }, label: Text("MODIFIER"),
               ),
             ),
-            Logo_nom(),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-              child: SouleymaneSoumare(),
-            )
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: DeconnexionButton(),
+            ),
+            Logo_nom(),
+
           ],
         ),
       ),

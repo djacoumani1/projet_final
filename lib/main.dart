@@ -5,7 +5,6 @@ import 'package:projet_final/widgets/proprietaire.dart';
 import 'dart:ui';
 import 'dart:core';
 import 'widgets/inscription_button.dart';
-import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

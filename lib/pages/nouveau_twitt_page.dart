@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:projet_final/models/twitt.dart';
-import 'package:projet_final/models/utilisateur.dart';
 import 'package:projet_final/widgets/logo_nom.dart';
 import '../bd/bd.dart';
-import '../widgets/alert.dart';
 import '../widgets/alertError.dart';
-import '../widgets/proprietaire.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class NouveauTwittPage extends StatefulWidget {
@@ -34,7 +31,6 @@ class NouveauTwittPageState  extends State<NouveauTwittPage>{
       idShared = _sharedpref.getInt("id")!;
       pseudo = _sharedpref.getString("identifiant")!;
     });
-
   }
 
   @override
@@ -91,7 +87,7 @@ class NouveauTwittPageState  extends State<NouveauTwittPage>{
 
                   fillColor: Colors.white,
                   filled: true,
-                  errorText: _validateTwitt ? 'Renseignez le prénom SVP' : null,
+                  errorText: _validateTwitt ? 'tweet vide ??' : null,
                 ),
                 maxLines: 5,
               ),

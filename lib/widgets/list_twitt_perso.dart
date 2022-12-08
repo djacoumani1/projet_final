@@ -3,7 +3,6 @@ import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:projet_final/models/twitt.dart';
 import '../bd/bd.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
 import '../pages/page_accueil.dart';
 
 class TwittPersoPage extends StatefulWidget {
@@ -19,7 +18,7 @@ class TwittPersoPageState  extends State<TwittPersoPage> with SingleTickerProvid
   )..forward();
   late final Animation<double> _animation = CurvedAnimation(
     parent: _controller,
-    curve: Curves.bounceInOut,
+    curve: Curves.linearToEaseOut,
   );
   final key = GlobalKey<TwittPersoPageState>();
 
@@ -133,7 +132,8 @@ class TwittPersoPageState  extends State<TwittPersoPage> with SingleTickerProvid
                                     ),),
                                     subtitle: Text(tweet.twitt, style: TextStyle(
                                       color: Colors.white
-                                    ),),
+                                    ),
+                                    ),
                                   ),
                                   Row(
                                       mainAxisAlignment: MainAxisAlignment.end,
