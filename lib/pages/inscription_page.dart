@@ -54,7 +54,7 @@ class InscriptionPageState  extends State<InscriptionPage> with SingleTickerProv
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 70, 350, 0),
+                  padding: const EdgeInsets.fromLTRB(0, 50, 350, 0),
                   child: InkWell(
                     onTap: (){
                       Navigator.pop(context);
@@ -226,10 +226,7 @@ class InscriptionPageState  extends State<InscriptionPage> with SingleTickerProv
                 ),
                 ),
                 Logo_nom(),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-                  child: SouleymaneSoumare(),
-                )
+
               ],
             ),
           ),

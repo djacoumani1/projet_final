@@ -26,11 +26,11 @@ class MyHomePage extends State<MyApp> with TickerProviderStateMixin {
         body: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.fromLTRB(25, 100, 10, 0),
+              padding: const EdgeInsets.fromLTRB(35, 70, 10, 0),
               child: Logo_nom(),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(40, 150, 0, 0),
+              padding: const EdgeInsets.fromLTRB(40, 120, 0, 0),
               child: ConnexionButton(),
             ),
             Padding(
@@ -38,7 +38,7 @@ class MyHomePage extends State<MyApp> with TickerProviderStateMixin {
               child: InscriptionButton(),
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(40, 300, 0, 0),
+              padding: const EdgeInsets.fromLTRB(40, 240, 0, 0),
               child: SouleymaneSoumare(),
             )
           ],
