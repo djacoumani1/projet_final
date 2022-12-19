@@ -227,7 +227,7 @@ class ProfilPageState  extends State<ProfilPage>{
               padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
               child: DeconnexionButton(),
             ),
-            Logo_nom(),
+
 
           ],
         ),
